@@ -1,0 +1,112 @@
+@use './variables' as *;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 991px,
+    xl: 1200px,
+    forLaptop: 1400px,
+    xxl: 1640px,
+);
+
+
+@mixin media-breakpoint-down-xxl {
+    @media (max-width: 1640px) {
+        @content;
+    }
+ }
+@mixin media-breakpoint-down-forLaptop {
+    @media (max-width: 1400px) {
+        @content;
+    }
+ }
+@mixin media-breakpoint-down-xl {
+    @media (max-width: 1200px) {
+        @content;
+    }
+ }
+@mixin media-breakpoint-down-lg {
+    @media (max-width: 991px) {
+        @content;
+    }
+ }
+@mixin media-breakpoint-down-md {
+    @media (max-width: 768px) {
+        @content;
+    }
+ }
+@mixin media-breakpoint-down-sm {
+    @media (max-width: 575px) {
+        @content;
+    }
+ }
+
+
+
+ 
+ @mixin button($style: "") {
+    display: inline-block;
+    cursor: pointer;
+    color: $white;
+    line-height: 33px;
+    letter-spacing: normal;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 15px;
+    transition: all .3s ease;
+    position: relative;
+    border-radius: 0;
+    min-height: 38px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    box-shadow: none; 
+    align-content: center;
+    outline: none;
+    border-radius: 5px;
+    background-color: transparent;
+    @include media-breakpoint-down-xxl {
+        line-height: 26px;
+        padding: 0 10px;
+        font-size: 12px;
+        min-height: 20px;
+    }
+
+    @if $style ==primary {
+        background-color: $primary;
+        border-color: $primary;
+
+        &:hover, &:active, &:not(:disabled):not(.disabled):active {
+            background-color: $primary;
+            border-color: $primary;
+            color: $white;
+        }
+    }
+
+    
+
+    
+
+    @if $style ==outline-primary {        
+        border:1px solid $primary;
+        color:$primary;
+        &:hover, &:active, &:not(:disabled):not(.disabled):active   {
+            background-color: $primary;
+            border-color: $primary; 
+            color: $white;
+        }
+    }
+    
+
+    &:focus,
+    &:active {
+        box-shadow: none;
+        outline: none;
+    }
+
+    &:not(:disabled):not(.disabled):active:focus {
+        box-shadow: none;
+    }
+}
