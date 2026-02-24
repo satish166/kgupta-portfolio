@@ -1,0 +1,105 @@
+@use '../../styles/components/variables' as *;
+@use '../../styles/components/mixin' as *;
+
+.homepage {
+    .main-banner {
+        position: relative;
+        background-image: url(../../assets/images/122.jpg);
+        height: 900px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 100%;
+        background-position: center top;
+
+        @include media-breakpoint-down-md {
+            height: 600px;
+        }
+
+        &::before {
+            content: "";
+            z-index: 0;
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgb(0 0 0 / 65%);
+        }
+
+        .banner-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            position: relative;
+            color: $white;
+            z-index: 2;
+            text-align: center;
+
+            .names {
+                margin-bottom: 0px;
+                font-size: 100px;
+                line-height: 1.5;
+                color: $white;
+                font-family: "Sacramento";
+
+                @include media-breakpoint-down-md {
+                    font-size: 50px;
+                }
+            }
+
+            h6 {
+                color: $white;
+                font-size: 20px;
+                line-height: 1.5;
+                margin-bottom: 30px;
+
+                @include media-breakpoint-down-md {
+                    font-size: 16px;
+                }
+            }
+
+            .std-countdown {
+                .std-circles {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 10px;
+
+                    .std-circle {
+                        display: inline-flex;
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50px;
+                        background: rgba(241, 78, 149, 0.8);
+                        align-items: center;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        @include media-breakpoint-down-md {
+                            height: 70px;
+                            width: 70px;
+                        }
+
+                        .std-value {
+                            font-size: 40px;
+                            @include media-breakpoint-down-md {
+                           font-size: 20px;
+                        }
+                        }
+
+                        .std-label {
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+
+            .std-date {
+                margin-block: 20px;
+                color: $white;
+            }
+        }
+    }
+}
