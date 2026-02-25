@@ -60,19 +60,19 @@ export default function Countdown({ target }) {
     return (
         <div className="std-countdown">
             <div className="std-circles">
-                <div className="std-circle">
+                <div className="std-circle animate-scale">
                     <div className="std-value">{time.days}</div>
                     <div className="std-label">{time.days === 1 ? "DAY" : "DAYS"}</div>
                 </div>
-                <div className="std-circle">
+                <div className="std-circle animate-scale">
                     <div className="std-value">{time.hours}</div>
                     <div className="std-label">{time.hours === 1 ? "HOUR" : "HOURS"}</div>
                 </div>
-                <div className="std-circle">
+                <div className="std-circle animate-scale">
                     <div className="std-value">{time.minutes}</div>
                     <div className="std-label">{time.minutes === 1 ? "MINUTE" : "MINUTES"}</div>
                 </div>
-                <div className="std-circle">
+                <div className="std-circle animate-scale">
                     <div className="std-value">{time.seconds}</div>
                     <div className="std-label">{time.seconds === 1 ? "SECOND" : "SECONDS"}</div>
                 </div>
