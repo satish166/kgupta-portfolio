@@ -1,18 +1,27 @@
-import { useState } from 'react'
-import './App.scss'
-import Header from './components/header/header';
+import { useState } from 'react';
+import { Routes, Route } from "react-router-dom";
+import './App.scss';
 import Homepage from './components/homepage/homepage';
-
-import Countdown from './components/homepage/countdown/countdown';
+import Gallery from './components/gallery/gallery';
+import MainLayout from './components/layouts/MainLayout';
+import NotFound from './components/not-found/not-found';
+import ContactUs from './components/contact-us/contact-us';
 
 
 function App() {
 
   return (
     <>
-    <Header />
-    <Homepage />
-    <Countdown/>
+    <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<ContactUs />} />
+        </Route>
+
+        {/* 404 without Header/Footer */}
+        <Route path="*" element={<NotFound />} />
+      </Routes> 
   </>
   )
 }

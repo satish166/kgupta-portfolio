@@ -1,9 +1,30 @@
 
 import "./homepage.scss";
-import bannerImage from '../../assets/images/img_bg_2.jpg';
+
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart, faCalendar, faClock } from "@fortawesome/free-solid-svg-icons";
+
+
 import Countdown from "./countdown/countdown";
-// import bannerImage1 from '../../assets/images/img_bg_3.jpg';
+import bannerImage1 from '../../assets/images/img_bg_3.jpg';
+import groomImage from '../../assets/images/crop-2.jpg';
+import brideImage from '../../assets/images/crop-1.jpg';
+
+// images
+import one from '../../assets/images/1.jpg';
+import two from '../../assets/images/2.jpg';
+import three from '../../assets/images/3.jpg';
+import four from '../../assets/images/4.jpg';
+import five from '../../assets/images/5.jpg';
+import six from '../../assets/images/6.jpg';
+
+
+
+
+
 export default function Homepage() {
+
 
 
   const icsContent = [
@@ -45,33 +66,119 @@ export default function Homepage() {
               <h6>We Are Getting Married</h6>
               <Countdown />
               <div className="action">
-                <button className="button button-primary" onClick={handleDownload}>
+                <button className="button button-outline-primary" onClick={handleDownload}>
                   Save the Date</button>
               </div>
             </div>
           </div>
         </section>
-        <section>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
-          <h1>Sandhu</h1>
+        <section className="hello-section">
+          <h2 className="primary-heading">Hello!</h2>
+          <h3 className="date">April 05th, 2026 Una (Himachal Pradesh)</h3>
+          <h5>We invited you to celebrate our wedding</h5>
+          <div className="container">
+            <div className="couple-event">
+
+
+              <div className="groom-section">
+                <div className="image">
+                  <img src={groomImage} alt="Groom Image" />
+                </div>
+                <div className="content">
+                  <h6>Rajveer</h6>
+                  <p>Thank you for loving our daughter with honesty, respect, and warmth. Your values, character, and gentle nature give us peace and happiness. We are proud to welcome you into our family and look forward to many beautiful memories together.</p>
+                </div>
+                
+              </div>
+              <div className="heart-icon animate-scale">
+                <FontAwesomeIcon icon={faHeart} />
+              </div>
+              <div className="bride-section">
+                <div className="content">
+                  <h6>Neha</h6>
+                  <p>Today you step into a new chapter with grace and courage.
+                    Your love softens hearts, your smile brings peace, and your presence fills our lives with joy.
+                    We appreciate the beautiful soul you are and the partner you are becoming.</p>
+                </div>
+                <div className="image">
+                  <img src={brideImage} alt="Groom Image" />
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="special-event">
+          <div className="bg-image">
+            <img className="w-100" src={bannerImage1} alt="bg Image" />
+          </div>
+          <div className="event-content">
+            <h6 className="heading">Our Special Events</h6>
+            <h2>Wedding Events</h2>
+            <div className="container">
+              <div className="row mt-4">
+                <div className="col-md-6">
+                  <div className="ceremony">
+                    <h4>Naanka Mel</h4>
+                    <div className="event-date">
+                      <div className="left-section">
+                        <FontAwesomeIcon icon={faClock} />
+                        <p>4:00 PM</p>
+                      </div>
+                      <div className="right-section">
+                        <FontAwesomeIcon icon={faCalendar} />
+                        <p>04 April 2026</p>
+                      </div>
+                    </div>
+                    <div className="event-details">
+                      <p>Across silent horizons and peaceful valleys of thought, two hearts find their way toward one timeless celebration. In this gentle corner of the world, love begins its journey, glowing like a lantern in the dusk.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="ceremony">
+                    <h4>Baraat</h4>
+                    <div className="event-date">
+                      <div className="left-section">
+                        <FontAwesomeIcon icon={faClock} />
+                        <p>11:00 AM</p>
+                      </div>
+                      <div className="right-section">
+                        <FontAwesomeIcon icon={faCalendar} />
+                        <p>05 April 2026</p>
+                      </div>
+                    </div>
+                    <div className="event-details">
+                      <p>Beyond the noise of bustling days and far from the hurried footsteps of the world, there lies a quiet corner where love lingers softly. Wrapped in the warmth of gentle colors and tender winds, each moment breathes a promise of new beginnings.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="wedding-gellery">
+          <span className="min-heading">Our Memories</span>
+          <h2 className="primary-heading">Wedding Gallery</h2>
+          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          <div className="container">
+            <div className="row">
+              <div className="gellery">
+                <img src={one} alt="" />
+                <img src={two} alt="" />
+                <img src={three} alt="" />
+                <img src={four} alt="" />
+                <img src={five} alt="" />
+                <img src={six} alt="" />
+
+              </div>
+              <div className="action">
+                <a href="/gallery" className="button button-primary">View All images</a>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
     </>

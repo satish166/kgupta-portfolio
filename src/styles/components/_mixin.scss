@@ -3,7 +3,7 @@
 $grid-breakpoints: (
     xs: 0,
     sm: 576px,
-    md: 768px,
+    md: 767px,
     lg: 991px,
     xl: 1200px,
     forLaptop: 1400px,
@@ -17,12 +17,12 @@ $grid-breakpoints: (
     }
  }
 @mixin media-breakpoint-down-forLaptop {
-    @media (max-width: 1400px) {
+    @media (max-width: 1399) {
         @content;
     }
  }
 @mixin media-breakpoint-down-xl {
-    @media (max-width: 1200px) {
+    @media (max-width: 1199px) {
         @content;
     }
  }
@@ -32,7 +32,7 @@ $grid-breakpoints: (
     }
  }
 @mixin media-breakpoint-down-md {
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         @content;
     }
  }
@@ -48,24 +48,24 @@ $grid-breakpoints: (
  @mixin button($style: "") {
     display: inline-block;
     cursor: pointer;
-    color: $white;
+    color: $primary;
     line-height: 33px;
     letter-spacing: normal;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 600;
     text-align: center;
     text-transform: uppercase;
-    padding: 0 15px;
+    padding: 0 20px;
     transition: all .3s ease;
     position: relative;
     border-radius: 0;
-    min-height: 38px;
+    min-height: 48px;
     border: 0;
     border-bottom: 2px solid transparent;
     box-shadow: none; 
     align-content: center;
     outline: none;
-    border-radius: 5px;
+    border-radius: 50px;
     background-color: transparent;
     @include media-breakpoint-down-xxl {
         line-height: 26px;
@@ -77,6 +77,7 @@ $grid-breakpoints: (
     @if $style ==primary {
         background-color: $primary;
         border-color: $primary;
+        color: $white;
 
         &:hover, &:active, &:not(:disabled):not(.disabled):active {
             background-color: $primary;
@@ -85,19 +86,20 @@ $grid-breakpoints: (
         }
     }
 
-    
-
-    
-
     @if $style ==outline-primary {        
         border:1px solid $primary;
         color:$primary;
+        background-color: $white;
         &:hover, &:active, &:not(:disabled):not(.disabled):active   {
             background-color: $primary;
             border-color: $primary; 
             color: $white;
         }
     }
+    
+
+    
+
     
 
     &:focus,
