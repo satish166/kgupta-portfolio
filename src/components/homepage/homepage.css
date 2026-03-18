@@ -1,0 +1,177 @@
+.homepage .main-banner {
+  position: relative;
+}
+.homepage .main-banner::before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+.homepage .main-banner .banner-image {
+  max-height: 800px;
+}
+@media (max-width: 1640px) {
+  .homepage .main-banner .banner-image {
+    max-height: 550px;
+  }
+}
+.homepage .main-banner .banner-image img {
+  max-height: 800px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: blur(2px);
+}
+@media (max-width: 1640px) {
+  .homepage .main-banner .banner-image img {
+    max-height: 550px;
+  }
+}
+.homepage .main-banner .banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  color: #ffffff;
+  text-align: start;
+  padding: 0 20px;
+  z-index: 2;
+}
+@media (max-width: 575px) {
+  .homepage .main-banner .banner-content {
+    left: 0;
+  }
+}
+.homepage .main-banner .banner-content h1 {
+  font-size: 58px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .homepage .main-banner .banner-content h1 {
+    font-size: 32px;
+    line-height: 34px;
+  }
+}
+.homepage .main-banner .banner-content h1 span {
+  font-weight: inherit;
+}
+.homepage .main-banner .banner-content p {
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .homepage .main-banner .banner-content p {
+    font-size: 16px;
+    line-height: normal;
+  }
+}
+.homepage .about-me {
+  padding-block: 70px;
+  text-align: center;
+}
+.homepage .about-me .primary-heading {
+  text-align: center;
+  border-bottom: 4px solid #00c7e1;
+  display: inline-block;
+  margin: auto;
+  margin-bottom: 40px;
+}
+.homepage .about-me .content {
+  text-align: left;
+}
+.homepage .about-me .content h3 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 600;
+}
+.homepage .about-me .content .personal-details {
+  -moz-column-count: 2;
+       column-count: 2;
+  margin-top: 40px;
+  gap: 50px;
+}
+@media (max-width: 767px) {
+  .homepage .about-me .content .personal-details {
+    -moz-column-count: 1;
+         column-count: 1;
+  }
+}
+@media (max-width: 767px) {
+  .homepage .about-me .content .personal-details {
+    -moz-column-count: 1;
+         column-count: 1;
+  }
+}
+.homepage .about-me .content .personal-details li:not(:last-child) {
+  margin-bottom: 20px;
+}
+.homepage .about-me .content .personal-details li p {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .homepage .about-me .content .personal-details li p {
+    max-width: 100%;
+  }
+}
+.homepage .skills {
+  padding-block: 70px;
+  text-align: center;
+}
+.homepage .skills .primary-heading {
+  text-align: center;
+  border-bottom: 4px solid #00c7e1;
+  display: inline-block;
+  margin: auto;
+  margin-bottom: 40px;
+}
+.homepage .skills .content {
+  text-align: left;
+}
+.homepage .skills .content h3 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 600;
+}
+.homepage .skills .content .personal-details {
+  -moz-column-count: 2;
+       column-count: 2;
+  margin-top: 40px;
+  gap: 50px;
+}
+@media (max-width: 767px) {
+  .homepage .skills .content .personal-details {
+    -moz-column-count: 1;
+         column-count: 1;
+  }
+}
+@media (max-width: 767px) {
+  .homepage .skills .content .personal-details {
+    -moz-column-count: 1;
+         column-count: 1;
+  }
+}
+.homepage .skills .content .personal-details li:not(:last-child) {
+  margin-bottom: 20px;
+}
+.homepage .skills .content .personal-details li p {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .homepage .skills .content .personal-details li p {
+    max-width: 100%;
+  }
+}
+/*# sourceMappingURL=homepage.css.map */

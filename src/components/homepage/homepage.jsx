@@ -1,182 +1,156 @@
 
 import "./homepage.scss";
 
+import DownloadResumeButton from "../DownloadResumeButton";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faCalendar, faClock } from "@fortawesome/free-solid-svg-icons";
-
-
-import Countdown from "./countdown/countdown";
-import bannerImage1 from '../../assets/images/img_bg_3.jpg';
-import groomImage from '../../assets/images/crop-2.jpg';
-import brideImage from '../../assets/images/crop-1.jpg';
-
-// images
-import one from '../../assets/images/1.jpg';
-import two from '../../assets/images/2.jpg';
-import three from '../../assets/images/3.jpg';
-import four from '../../assets/images/4.jpg';
-import five from '../../assets/images/5.jpg';
-import six from '../../assets/images/6.jpg';
-
-
-
+import { faHtml5, faCss3Alt, faSass, faJs, faReact, faGithub, faAngular, faPostgresql } from "@fortawesome/free-brands-svg-icons";
+import { faServer } from '@fortawesome/free-solid-svg-icons';
+import bannerImage from './../../assets/images/img-3.jpg';
+import javascriptImage from './../../assets/images/javascript.svg';
+import HtmlImage from './../../assets/images/html-5.svg';
+import reactImage from './../../assets/images/react.svg';
+import dotnetImage from './../../assets/images/dotnet.svg';
+import sqlserverImage from './../../assets/images/sql-server.svg';
+import dapperImage from './../../assets/images/dapper.svg';
+import angularImage from './../../assets/images/angular.svg';
+import ajaxImage from './../../assets/images/ajax.svg';
+import nextjsImage from './../../assets/images/next-dot.svg';
+import entityframeworkImage from './../../assets/images/entityframework.png';
+import apiImage from './../../assets/images/api.svg';
+import jqueryImage from './../../assets/images/jquery.svg';
 
 
 export default function Homepage() {
 
-
-
-  const icsContent = [
-    "BEGIN:VCALENDAR",
-    "VERSION:2.0",
-    "PRODID:-//SaveTheDate//Wedding//EN",
-    "CALSCALE:GREGORIAN",
-    "METHOD:PUBLISH",
-    "BEGIN:VEVENT",
-    "UID:save-the-date-20260405@example",
-    "SUMMARY:Wedding - Save the Date",
-    "DESCRIPTION:Save the date for our wedding!",
-    "DTSTAMP:20260101T000000Z",
-    "DTSTART;VALUE=DATE:20260405",
-    "DTEND;VALUE=DATE:20260406",
-    "END:VEVENT",
-    "END:VCALENDAR",
-    ""
-  ].join("\r\n");
-
-  const handleDownload = () => {
-    const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "save-the-date.ics";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
-  };
   return (
     <>
       <div className="homepage">
         <section className="main-banner">
+          <div className="banner-image">
+            <img src={bannerImage} alt="Banner" />
+          </div>
           <div className="banner-content">
-            <div className="">
-              <h1 className="names">Rajveer & Neha</h1>
-              <h6>We Are Getting Married</h6>
-              <Countdown />
-              <div className="action">
-                <button className="button button-outline-primary" onClick={handleDownload}>
-                  Save the Date</button>
-              </div>
+            <h1 className="mb-3">Hi, I'm <span className="color-primary">Khushi Gupta</span></h1>
+            <p className="mb-4"> .Net Full Stack Developer</p>
+            <div className="action">
+              <DownloadResumeButton />
             </div>
+            {/* <a href="#" className="btn btn-primary">View My Work</a> */}
           </div>
         </section>
-        <section className="hello-section">
-          <h2 className="primary-heading">Hello!</h2>
-          <h3 className="date">April 05th, 2026 Una (Himachal Pradesh)</h3>
-          <h5>We invited you to celebrate our wedding</h5>
+
+        <section className="about-me">
+          <h5 className="primary-heading">About</h5>
+
           <div className="container">
-            <div className="couple-event">
-
-
-              <div className="groom-section">
+            <div className="row align-items-center">
+              <div className="col-md-4">
                 <div className="image">
-                  <img src={groomImage} alt="Groom Image" />
+                  <img src="https://mohammedatefportfolio.vercel.app/img/2025.png" alt="About Me" />
                 </div>
+              </div>
+              <div className="col-md-8">
                 <div className="content">
-                  <h6>Rajveer</h6>
-                  <p>Thank you for loving our daughter with honesty, respect, and warmth. Your values, character, and gentle nature give us peace and happiness. We are proud to welcome you into our family and look forward to many beautiful memories together.</p>
-                </div>
-                
-              </div>
-              <div className="heart-icon animate-scale">
-                <FontAwesomeIcon icon={faHeart} />
-              </div>
-              <div className="bride-section">
-                <div className="content">
-                  <h6>Neha</h6>
-                  <p>Today you step into a new chapter with grace and courage.
-                    Your love softens hearts, your smile brings peace, and your presence fills our lives with joy.
-                    We appreciate the beautiful soul you are and the partner you are becoming.</p>
-                </div>
-                <div className="image">
-                  <img src={brideImage} alt="Groom Image" />
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="special-event">
-          <div className="bg-image">
-            <img className="w-100" src={bannerImage1} alt="bg Image" />
-          </div>
-          <div className="event-content">
-            <h6 className="heading">Our Special Events</h6>
-            <h2>Wedding Events</h2>
-            <div className="container">
-              <div className="row mt-4">
-                <div className="col-md-6">
-                  <div className="ceremony">
-                    <h4>Naanka Mel</h4>
-                    <div className="event-date">
-                      <div className="left-section">
-                        <FontAwesomeIcon icon={faClock} />
-                        <p>4:00 PM</p>
-                      </div>
-                      <div className="right-section">
-                        <FontAwesomeIcon icon={faCalendar} />
-                        <p>04 April 2026</p>
-                      </div>
-                    </div>
-                    <div className="event-details">
-                      <p>Across silent horizons and peaceful valleys of thought, two hearts find their way toward one timeless celebration. In this gentle corner of the world, love begins its journey, glowing like a lantern in the dusk.</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="ceremony">
-                    <h4>Baraat</h4>
-                    <div className="event-date">
-                      <div className="left-section">
-                        <FontAwesomeIcon icon={faClock} />
-                        <p>11:00 AM</p>
-                      </div>
-                      <div className="right-section">
-                        <FontAwesomeIcon icon={faCalendar} />
-                        <p>05 April 2026</p>
-                      </div>
-                    </div>
-                    <div className="event-details">
-                      <p>Beyond the noise of bustling days and far from the hurried footsteps of the world, there lies a quiet corner where love lingers softly. Wrapped in the warmth of gentle colors and tender winds, each moment breathes a promise of new beginnings.</p>
-                    </div>
-                  </div>
+                  <h3>Hey, My Name is <span className="color-primary">Khushi Gupta</span></h3>
+                  <p>Motivated .NET Developer with 1.4 years of experience in building full‑stack web applications using .NET, Angular, and modern JavaScript. Skilled in RESTful APIs, Entity Framework, Dapper, and database-driven solutions.</p>
+                  <ul className="personal-details">
+                    <li><p className="font-semibold">Birthday: <span>03 Feb 2002</span></p></li>
+                    <li><p className="font-semibold">Phone: <span>+91 8791353307</span></p></li>
+                    <li><p className="font-semibold">Email: <span>kg611409@gmail.com</span></p></li>
+                    <li><p className="font-semibold">Age: <span>23</span></p></li>
+                    <li><p className="font-semibold">Degree: <span>Master of Computer Application</span></p></li>
+                    <li><p className="font-semibold">Address: <span>Mohali, India</span></p></li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </section>
+        <section className="skills">
+          <h5 className="primary-heading">Skills</h5>
 
-        <section className="wedding-gellery">
-          <span className="min-heading">Our Memories</span>
-          <h2 className="primary-heading">Wedding Gallery</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
           <div className="container">
             <div className="row">
-              <div className="gellery">
-                <img src={one} alt="" />
-                <img src={two} alt="" />
-                <img src={three} alt="" />
-                <img src={four} alt="" />
-                <img src={five} alt="" />
-                <img src={six} alt="" />
+              <div className="col-md-4">
+                <div className="skill-box">
+                  <h3>Frontend Development</h3>
+                  <ul className="skill-list">
+                    <li>
+                      <img src={javascriptImage} alt="Next.js" />
+                      <h5> Javascript</h5>
+                    </li>
+                    <li>
+                      <img src={nextjsImage} alt="Next.js" />
+                      <h5> Next JS</h5>
+                    </li>
+                    <li>
+                      <img src={HtmlImage} alt="HTML" />
+                      <h5> HTML</h5>
+                    </li>
+                    <li>
+                      <img src={ajaxImage} alt="Ajax" />
+                      <h5>
+                        Ajax</h5>
+                    </li>
+                    <li>
+                      <img src={jqueryImage} alt="JQuery" />
+                      <h5> JQuery</h5>
+                    </li>
+                    <li>
+                      <img src={angularImage} alt="Angular" />
+                      <h5> Angular</h5>
+                    </li>
+                    <li>
+                      <img src={reactImage} alt="React" />
+                      <h5> React</h5>
+                    </li>
 
+                  </ul>
+                </div>
               </div>
-              <div className="action">
-                <a href="/gallery" className="button button-primary">View All images</a>
+              <div className="col-md-4">
+                <div className="skill-box">
+                  <h3>Backend Development</h3>
+                  <ul className="skill-list">
+                    <li>
+                      <img src={dotnetImage} alt=".NET" />
+                      <h5> .NET</h5>
+                    </li>
+                    <li>
+                      <img src={apiImage} alt="Web API" />
+                      <h5> Web API</h5>
+                    </li>
+
+                  </ul>
+                </div>
               </div>
+              <div className="col-md-4">
+                <div className="skill-box">
+                  <h3>ORM & Database</h3>
+                  <ul className="skill-list">
+                    <li>
+                      <img src={entityframeworkImage} alt="Entity Framework" />
+                      <h5> Entity Framework</h5>
+                    </li>
+                    <li>
+                     <img src={sqlserverImage} alt="SQL Server" />
+                      <h5> SQL Server</h5>
+                    </li>
+                    <li>
+                      <img src={dapperImage} alt="Dapper" />
+                      <h5> Dapper</h5>
+                    </li>
+                    <li>
+                      <FontAwesomeIcon icon={faPostgresql} />
+                      <h5>
+                        PostgresSql</h5>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+             
             </div>
           </div>
         </section>
