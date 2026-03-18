@@ -1,0 +1,12 @@
+@use './variables' as *;
+@use './mixin' as *;
+
+
+.main-content {
+    @include media-breakpoint-down-lg {
+        margin-top: 71px;
+    }
+}
+.color-primary {
+    color: $primary;
+}

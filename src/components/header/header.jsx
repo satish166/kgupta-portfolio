@@ -3,18 +3,20 @@ import { Link } from "react-router-dom";
 
 
 import "./header.scss";
+import DownloadResumeButton from "../DownloadResumeButton";
 export default function Header() {
+  const logo = "Khushi Gupta";
 
 
   return (
     <>
       <div className="header">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row">
             <div className="col-12">
               <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                  <Link to="/" className="navbar-brand">Wedding.</Link>
+                <div class="menu-container">
+                  <Link to="/" className="navbar-brand">{logo}</Link>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
@@ -27,15 +29,14 @@ export default function Header() {
                         </NavLink>
                       </li>
 
-                      {/* <li className="nav-item">
-                        <NavLink to="/story" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                          Story
-                        </NavLink>
-                      </li> */}
-
                       <li className="nav-item">
-                        <NavLink to="/gallery" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                          Gallery
+                        <NavLink to="/education" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+                          Education
+                        </NavLink>
+                      </li>
+                      <li className="nav-item">
+                        <NavLink to="/projects" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+                          Projects
                         </NavLink>
                       </li>
                       <li className="nav-item">
@@ -45,7 +46,12 @@ export default function Header() {
                       </li>
                       
                     </ul>
+                    
+                  {/* <div className="download-resume ms-3">
+                    <DownloadResumeButton />
+                  </div> */}
                   </div>
+
                 </div>
               </nav>
             </div>
