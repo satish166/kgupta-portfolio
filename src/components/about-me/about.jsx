@@ -16,12 +16,12 @@ export default function AboutMe() {
                 <div className="row align-items-center">
                   <div className="col-md-4" data-aos="fade-up" data-aos-delay="400">
                     <div className="image">
-                      {/* <img src={kIMage} alt="About Me" /> */}
+                      <img src={kIMage} alt="About Me" />
                     </div>
                   </div>
                   <div className="col-md-8" data-aos="fade-up" data-aos-delay="400">
                     <div className="content">
-                      {/* <h3>Hey, My Name is <span className="color-primary">Khushi Gupta</span></h3> */}
+                      <h3>Hey, My Name is <span className="color-primary">Khushi Gupta</span></h3>
                       <p>Motivated .NET Developer with 1.4 years of experience in building full‑stack web applications using .NET, Angular, and modern JavaScript. Skilled in RESTful APIs, Entity Framework, Dapper, and database-driven solutions.</p>
                       <ul className="personal-details">
                         <li data-aos="fade-up" data-aos-delay="400"><p className="font-semibold">Birthday: <span>03 Feb 2002</span></p></li>

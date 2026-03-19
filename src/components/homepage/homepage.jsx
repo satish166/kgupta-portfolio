@@ -23,7 +23,7 @@ export default function Homepage() {
             <img src={bannerImage} alt="Banner" />
           </div>
           <div className="banner-content">
-            {/* <h1 className="mb-3" data-aos="fade-up" data-aos-delay="400">Hi, I'm <span className="color-primary">Khushi Gupta</span></h1> */}
+            <h1 className="mb-3" data-aos="fade-up" data-aos-delay="400">Hi, I'm <span className="color-primary">Khushi Gupta</span></h1>
             <p className="mb-4" data-aos="fade-up" data-aos-delay="500"> .Net Full Stack Developer</p>
             <div className="action" data-aos="fade-up" data-aos-delay="550">
               <DownloadResumeButton />
