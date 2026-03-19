@@ -16,7 +16,8 @@ export default function Header() {
             <div className="col-12">
               <nav class="navbar navbar-expand-lg">
                 <div class="menu-container">
-                  <Link to="/" className="navbar-brand">{logo}</Link>
+                  {/* <a href="#" className="navbar-brand">{logo}</a> */}
+                  <a href="#" className="navbar-brand">ss</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
@@ -24,25 +25,22 @@ export default function Header() {
 
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                       <li className="nav-item">
-                        <NavLink to="/" end className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                          Home
-                        </NavLink>
+                         <a href="#" className="nav-link">Home</a>
+                       
                       </li>
 
                       <li className="nav-item">
-                        <NavLink to="/education" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                          Education
-                        </NavLink>
+                         <a href="#aboutme" className="nav-link">About</a>
                       </li>
                       <li className="nav-item">
-                        <NavLink to="/projects" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                          Projects
-                        </NavLink>
+                         <a href="#skills" className="nav-link">Skills</a>
                       </li>
                       <li className="nav-item">
-                        <NavLink to="/contact" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                          Contact
-                        </NavLink>
+                        <a href="#projects" className="nav-link">Projects</a>
+                     
+                      </li>
+                      <li className="nav-item">
+                        <a href="#contactus" className="nav-link">Contact</a>
                       </li>
                       
                     </ul>

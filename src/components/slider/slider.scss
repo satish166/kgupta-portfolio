@@ -1,0 +1,23 @@
+/* Basic slide spacing */
+.slick-slide {
+  padding: 10px;
+}
+
+/* Default slide style */
+.slide-box {
+  background: #eaeaea;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  opacity: 0.5;
+  transform: scale(0.85);
+}
+
+/* Center slide */
+.slick-center .slide-box {
+  background: #007bff;
+  color: white;
+  opacity: 1;
+  transform: scale(1);
+}

@@ -2,9 +2,13 @@
 
 import "./contact-us.scss";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+
+import Address from "./../../assets/images/address.svg";
+import Phone from "./../../assets/images/phone.svg";
+import Mail from "./../../assets/images/mail.svg";
+import Linkdin from "./../../assets/images/linkdin.svg";
+import Whatsapp from "./../../assets/images/whatsapp.svg";
 
 
 export default function ContactUs() {
@@ -12,79 +16,91 @@ export default function ContactUs() {
 
   return (
     <>
-      <div className="contact-us">
-        <section className="main-banner">
-          <div className="banner-content">
-            <div className="">
-              <h1 className="names">Contact Us</h1>
-              <h6>Made by Satish Sandhu</h6>
+      <section className="contact-section overflow-hidden" id="contactus" data-aos="fade-up" data-aos-delay="300">
+        <div className="work-content container">
+          <div className="row">
+            <div className="left-section col-lg-5">
+              <h2 className="heading">Contact Us
+              </h2>
+              <div className="contact-us" data-aos="fade-right">
+                <ul>
+                  <li className="list-item">
+                    <img src={Address} alt="Hero" className="h-auto contact-us-icons" />
+                    <div className="">
+                      <h6>Address</h6>
+                      <p>Mohali, Punjab</p>
+                    </div>
+                  </li>
+                  <li className="list-item">
+                    <img src={Phone} alt="Hero" className="h-auto contact-us-icons" />
+                    <div className="">
+                      <h6>Call Us</h6>
+                      <p><a target="_blank" href="tel:+91 8791353307">+91 8791353307</a></p>
+
+                    </div>
+                  </li>
+                  <li className="list-item">
+                    <img src={Mail} alt="Hero" className="h-auto contact-us-icons" />
+                    <div className="">
+                      <h6>E-mail</h6>
+                      <p><a href="mailto:kg611409@gmail.com">kg611409@gmail.com</a></p>
+                    </div>
+                  </li>
+                </ul>
+
+                <ul className="social-links">
+                  <li>
+                    <a target="_blank" href="https://www.linkedin.com/in/khushi-gupta-16b81528a">
+                      <img src={Linkdin} alt="Hero" className="h-auto contact-us-icons" />
+                    </a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://wa.me/8791353307">
+                      <img src={Whatsapp} alt="Hero" className="h-auto contact-us-icons" />
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </section>
-        <div className="contact-details">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-6">
-                <div className="address">
-                  <h5>Contact Information</h5>
-                  <ul>
-                    <li>
-                      <FontAwesomeIcon icon={faLocationDot} />
-                      <p>V.P.O Chattara Distt & Teh Una (H.P)</p>
-                    </li>
-                    <li>
-                      <FontAwesomeIcon icon={faPhone} />
-                      <p><a href="tel:8278860269">+91 8278860269</a></p>
-                    </li>
-                    <li>
-                      <FontAwesomeIcon icon={faEnvelope} />
-                      <p><a href="mailto:sandhusatish166@gmail.com">sandhusatish166@gmail.com</a></p>
-                    </li>
-                    <li>
-                      <FontAwesomeIcon icon={faInstagram} />
-                      <p>devil_hp72</p>
-                    </li>
-                  </ul>
+            <div className="right-section col-lg-12">
+              <div className="row">
+                <div className="col-xl-5 d-none d-lg-block">
+
+                </div>
+                <div className="col-xl-7">
+                  <div className="get-in-touch" data-aos="fade-left" data-aos-delay="500">
+                    <h2 className="heading">Let's Work Together</h2>
+                    <p>Have a project in mind or want to collaborate? I'm just a message away</p>
+                    <form action="" method="get">
+                      <div className="field">
+                        <label htmlFor="Name">Name</label>
+                        <input type="text" placeholder="Enter Your Name" />
+                      </div>
+                      <div className="field">
+                        <label htmlFor="Name">Email</label>
+                        <input type="email" placeholder="Enter Your Name" />
+                      </div>
+                      <div className="field">
+                        <label htmlFor="Name">Message</label>
+                        <textarea name="Message" id="message" placeholder="Enter Message">
+
+                        </textarea>
+                      </div>
+                      <div className="field d-inline-block">
+                        <a target="_blank" href="mailto:kg611409@gmail.com" className="button button-primary" >Send Message</a>
+                      </div>
+
+                    </form>
+                  </div>
+
                 </div>
               </div>
-              <div className="col-md-6 mt-5 mt-md-0">
-                <form action="" className="contact-form">
-                  <h3 className="mb-3">Get In Touch</h3>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <div className="inputs">
-                        <label htmlFor="First Name" className="label">First Name</label>
-                        <input type="text" className="w-100" placeholder="First Name" />
-                      </div>
-                    </div>
-                    <div className="col-md-6 mt-3 mt-md-0">
-                      <div className="inputs">
-                        <label htmlFor="Last Name" className="label">Last Name</label>
-                        <input id="name" type="text" className="w-100" placeholder="Last Name" />
-                      </div>
-                    </div>
-                    <div className="col-12 mt-3">
-                      <div className="inputs">
-                        <label htmlFor="Email" className="label">Email</label>
-                        <input id="name" type="email" className="w-100" placeholder="Email" />
-                      </div>
-                    </div>
-                    <div className="col-12 mt-3">
-                      <div className="inputs">
-                        <label htmlFor="Email" className="label">Email</label>
-                        <textarea name="Message" id="message" placeholder="Write Message"></textarea>
-                      </div>
-                    </div>
-                    <div className="col-12 mt-3">
-                      <a href="mailto:sandhusatish166@gmail.com" className="button button-primary">Send Message</a>
-                    </div>
-                  </div>
-                </form>
-              </div>
             </div>
+
           </div>
         </div>
-      </div>
+
+      </section>
     </>
   );
 }
