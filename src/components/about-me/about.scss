@@ -8,7 +8,6 @@
 
     .primary-heading {
         text-align: center;
-        border-bottom: 4px solid $primary;
         display: inline-block;
         margin: auto;
         margin-bottom: 40px;
@@ -23,6 +22,7 @@
             margin-bottom: 20px;
             font-size: 30px;
             font-weight: 600;
+            line-height: normal;
         }
 
         .personal-details {
