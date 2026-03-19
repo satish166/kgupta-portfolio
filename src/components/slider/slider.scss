@@ -1,23 +1,95 @@
-/* Basic slide spacing */
-.slick-slide {
-  padding: 10px;
-}
+@use '../../styles/components/variables' as *;
+@use '../../styles/components/mixin' as *;
 
-/* Default slide style */
-.slide-box {
-  background: #eaeaea;
-  padding: 40px;
-  text-align: center;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  opacity: 0.5;
-  transform: scale(0.85);
-}
+.custom-slider {
+    .slide-item {
+        .project-card {
+            position: relative;
 
-/* Center slide */
-.slick-center .slide-box {
-  background: #007bff;
-  color: white;
-  opacity: 1;
-  transform: scale(1);
+            .project-image {
+                height: 600px;
+                overflow: hidden;
+
+                @include media-breakpoint-down-md {
+                    height: 400px;
+                }
+
+                img {
+                    height: 600px;
+                    width: 100%;
+                    object-fit: cover;
+
+                    @include media-breakpoint-down-md {
+                        height: 400px;
+                        filter: blur(2px);
+                    }
+                }
+            }
+
+            .project-content {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: #0000009c;
+                color: $white;
+                text-align: left;
+                padding: 20px;
+                transform: translateY(100%);
+                transition: transform 0.5s ease;
+
+                @include media-breakpoint-down-md {
+                    transform: none;
+                }
+
+                h5 {
+                    font-size: 23px;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                    @include media-breakpoint-down-md {
+                        font-size: 18px;
+                    }
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 70px;
+                        height: 4px;
+                        background-color: $primary;
+                        margin-bottom: 10px;
+                        margin-top: 5px;
+                    }
+                }
+
+                p {
+                    margin-bottom: 10px;
+                }
+            }
+
+            &:hover {
+                .project-image {
+                    filter: blur(2px);
+                }
+
+                .project-content {
+                    transform: none;
+                }
+            }
+        }
+    }
+
+    .slick-dots {
+        li {
+            button {
+                &::before {
+                    color: $primary;
+                }
+
+                &.slick-active {
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
 }

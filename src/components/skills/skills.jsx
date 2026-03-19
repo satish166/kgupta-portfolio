@@ -38,10 +38,10 @@ export default function Skills() {
                       <img src={javascriptImage} alt="Next.js" />
                       <h5> Javascript</h5>
                     </li>
-                    <li>
+                    {/* <li>
                       <img src={nextjsImage} alt="Next.js" />
                       <h5> Next JS</h5>
-                    </li>
+                    </li> */}
                     <li>
                       <img src={HtmlImage} alt="HTML" />
                       <h5> HTML</h5>

@@ -7,6 +7,7 @@
     &-primary {
         @include button(primary);
     }
+
     &-outline-primary {
         @include button(outline-primary);
     }
@@ -19,11 +20,29 @@
     margin-bottom: 10px;
     line-height: 1.5;
     font-weight: bold;
-    color: $primary;
+    color: $white;
     font-family: "poppins";
-     @include media-breakpoint-down-lg {
-                 font-size: 40px;
-                 }
+    position: relative;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 4px;
+        background-color: $primary;
+        margin-bottom: 10px;
+        margin-top: 5px;
+        transition: width 0.5s ease;
+    }
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+
+    @include media-breakpoint-down-lg {
+        font-size: 40px;
+    }
 }
 
 .font-semibold {
@@ -33,13 +52,16 @@
 .animate-scale {
     animation: animateScale 2s infinite;
     overflow: hidden;
+
     @keyframes animateScale {
         0% {
             transform: scale(1);
         }
+
         50% {
             transform: scale(1.05);
         }
+
         100% {
             transform: scale(1);
         }
@@ -47,5 +69,5 @@
 }
 
 .row {
-    gap: 20px 0 ;
+    gap: 20px 0;
 }
