@@ -55,7 +55,7 @@ export default function ContactUs() {
                     </a>
                   </li>
                   <li>
-                    <a target="_blank" href="https://wa.me/8791353307">
+                    <a target="_blank" href="https://wa.me/+91 8791353307">
                       <img src={Whatsapp} alt="Hero" className="h-auto contact-us-icons" />
                     </a>
                   </li>
