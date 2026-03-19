@@ -15,11 +15,14 @@
     "@fortawesome/free-regular-svg-icons": "^7.2.0",
     "@fortawesome/free-solid-svg-icons": "^7.2.0",
     "@fortawesome/react-fontawesome": "^3.2.0",
+    "aos": "^2.3.4",
     "bootstrap": "^5.3.8",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.1",
-    "sass": "^1.97.3"
+    "react-slick": "^0.31.0",
+    "sass": "^1.97.3",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

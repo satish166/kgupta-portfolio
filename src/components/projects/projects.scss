@@ -1,0 +1,82 @@
+@use '../../styles/components/variables' as *;
+@use '../../styles/components/mixin' as *;
+
+ .projects {
+         padding-block: 70px;
+         text-align: center;
+         overflow: hidden;
+
+         @include media-breakpoint-down-md {
+             padding-block: 40px;
+         }
+
+         .primary-heading {
+             text-align: center;
+             border-bottom: 4px solid $primary;
+             display: inline-block;
+             margin: auto;
+             margin-bottom: 40px;
+         }
+
+         .skill-box {
+             border: 1px solid $white;
+             padding: 15px;
+             border-radius: 10px;
+             height: 100%;
+
+             h3 {
+                 margin-bottom: 20px;
+             }
+
+             .skill-list {
+                 list-style: none;
+                 display: flex;
+                 flex-wrap: wrap;
+                 gap: 10px;
+                 justify-content: start;
+
+                 svg,
+                 img {
+                     max-width: 30px;
+                     min-height: 52px;
+                     color: $white;
+                     object-fit: contain;
+                     //  filter: brightness(0) saturate(100%)
+                 }
+
+                 h5 {
+                     font-size: 14px;
+                 }
+
+                 li {
+                     text-align: center;
+                     border: 1px solid $white;
+                     padding: 10px;
+                     border-radius: 20px;
+                     margin-bottom: 10px;
+                     flex: 0 0 31%;
+                     transition: 0.5s;
+
+                     &:hover {
+                         border-color: $primary;
+
+                         svg,
+                         img {
+                             color: $white;
+                             //  filter: brightness(0) saturate(100%) invert(98%) sepia(0%) saturate(5%) hue-rotate(164deg) brightness(103%) contrast(103%);
+                         }
+
+                         h5 {
+                             transition: 0.5s;
+                             color: $primary;
+                         }
+                     }
+
+
+                 }
+
+
+
+             }
+         }
+     }

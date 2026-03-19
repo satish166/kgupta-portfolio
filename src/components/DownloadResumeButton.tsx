@@ -5,8 +5,8 @@ import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 export default function DownloadResumeButton() {
   const handleDownload = () => {
     const a = document.createElement('a');
-    a.href = '/satish-resume.pdf'; // PDF inside public folder
-    a.download = 'Satish-Kumar-Resume.pdf';
+    a.href = '/khushi-gupta.pdf'; // PDF inside public folder
+    a.download = 'Khushi-Gupta-Resume.pdf';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
