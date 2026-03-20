@@ -53,9 +53,11 @@
                      padding: 10px;
                      border-radius: 20px;
                      margin-bottom: 10px;
-                     flex: 0 0 31%;
+                     flex: 0 0 23%;
                      transition: 0.5s;
-
+                    @include media-breakpoint-down-md {
+                        flex: 0 0 30%; 
+                    }
                      &:hover {
                          border-color: $primary;
 
