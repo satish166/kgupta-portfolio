@@ -153,7 +153,7 @@ export default function Skills() {
             </div>
             <div className="col-lg-6" data-aos="fade-left" data-aos-delay="400">
               <div className="skill-box">
-                <h3>ORM & Database</h3>
+                <h3>Tools & Editor</h3>
                 <ul className="skill-list">
                   <li>
                     <img src={visualStudioImage} alt="Visual Studio" />
