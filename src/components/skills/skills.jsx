@@ -70,8 +70,8 @@ export default function Skills() {
                     <h5> HTML</h5>
                   </li>
                   <li>
-                    <img src={CQRS2Image} alt="CQRS2" />
-                    <h5> CQRS2</h5>
+                    <img src={CQRS2Image} alt="CQRS" />
+                    <h5> CQRS</h5>
                   </li>
 
 
