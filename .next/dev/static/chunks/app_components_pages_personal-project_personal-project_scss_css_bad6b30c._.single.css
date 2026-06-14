@@ -1,0 +1,280 @@
+/* [project]/app/components/pages/personal-project/personal-project.scss.css [app-client] (css) */
+.personal-section {
+  padding-block: 80px;
+}
+
+@media (max-width: 768px) {
+  .personal-section {
+    padding-block: 50px;
+  }
+}
+
+@media (max-width: 575px) {
+  .personal-section {
+    padding-block: 40px;
+  }
+}
+
+.personal-section .section-subheading {
+  color: #9ca3af;
+  margin-top: 12px;
+  margin-bottom: 30px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+@media (max-width: 575px) {
+  .personal-section .section-subheading {
+    margin-top: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+}
+
+.personal-section .personal-slider-container {
+  margin-inline: -8px;
+}
+
+.personal-section .personal-slider-container .slick-track {
+  display: flex !important;
+}
+
+.personal-section .personal-slider-container .slick-slide {
+  justify-content: center;
+  height: inherit !important;
+  display: flex !important;
+}
+
+.personal-section .personal-slider-container .slick-slide > div {
+  width: 100%;
+  display: flex;
+}
+
+.personal-section .personal-slider-container .slick-dots {
+  bottom: -35px;
+}
+
+@media (max-width: 575px) {
+  .personal-section .personal-slider-container .slick-dots {
+    bottom: -28px;
+  }
+}
+
+.personal-section .personal-slider-container .slick-dots li {
+  margin: 0 4px;
+}
+
+@media (max-width: 575px) {
+  .personal-section .personal-slider-container .slick-dots li {
+    margin: 0 2px;
+  }
+}
+
+.personal-section .personal-slider-container .slick-dots li button:before {
+  color: #ffffff40;
+  opacity: 1;
+  font-size: 8px;
+  transition: color .3s;
+}
+
+@media (max-width: 575px) {
+  .personal-section .personal-slider-container .slick-dots li button:before {
+    font-size: 6px;
+  }
+}
+
+.personal-section .personal-slider-container .slick-dots li.slick-active button:before {
+  color: #10b981;
+}
+
+body.light-theme .personal-section .personal-slider-container .slick-dots li button:before {
+  color: #00000026 !important;
+}
+
+body.light-theme .personal-section .personal-slider-container .slick-dots li.slick-active button:before {
+  color: #e65f2b !important;
+}
+
+.personal-section .personal-card {
+  background: #0d0d16b3;
+  border: 1px solid #ffffff0d;
+  border-radius: 20px;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  transition: all .4s cubic-bezier(.4, 0, .2, 1);
+  display: flex;
+  overflow: hidden;
+}
+
+@media (max-width: 575px) {
+  .personal-section .personal-card {
+    border-radius: 14px;
+  }
+}
+
+.personal-section .personal-card .visit-site-link {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.personal-section .personal-card .image-wrapper {
+  aspect-ratio: 16 / 9;
+  background: #0000001a;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.personal-section .personal-card .image-wrapper .project-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform .8s cubic-bezier(.4, 0, .2, 1);
+}
+
+.personal-section .personal-card .image-wrapper .hover-action {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  z-index: 3;
+  background: #070a13bf;
+  justify-content: center;
+  align-items: center;
+  transition: opacity .4s;
+  display: flex;
+  position: absolute;
+  inset: 0;
+}
+
+.personal-section .personal-card .image-wrapper .hover-action .btn-visit {
+  color: #10b981;
+  background: #a855f70d;
+  border: 1px solid #a855f74d;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform .4s cubic-bezier(.165, .84, .44, 1);
+  transform: translateY(12px);
+}
+
+@media (max-width: 575px) {
+  .personal-section .personal-card .image-wrapper .hover-action .btn-visit {
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+}
+
+.personal-section .personal-card .about-project {
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 24px;
+  display: flex;
+}
+
+@media (max-width: 575px) {
+  .personal-section .personal-card .about-project {
+    padding: 16px;
+  }
+}
+
+.personal-section .personal-card .about-project .project-title-text {
+  color: #fff;
+  background: linear-gradient(135deg, #fff, #d1d5db);
+  -webkit-text-fill-color: #0000;
+  -webkit-background-clip: text;
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media (max-width: 575px) {
+  .personal-section .personal-card .about-project .project-title-text {
+    margin-bottom: 8px;
+    font-size: 17px;
+  }
+}
+
+.personal-section .personal-card .about-project .project-desc {
+  color: #9ca3af;
+  flex-grow: 1;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 575px) {
+  .personal-section .personal-card .about-project .project-desc {
+    margin-bottom: 14px;
+    font-size: 13px;
+  }
+}
+
+.personal-section .personal-card .about-project .action-row {
+  margin-top: auto;
+}
+
+.personal-section .personal-card .about-project .action-row .live-link {
+  color: #10b981;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .3s;
+  display: inline-flex;
+}
+
+@media (max-width: 575px) {
+  .personal-section .personal-card .about-project .action-row .live-link {
+    font-size: 13px;
+  }
+}
+
+body.light-theme .personal-section .personal-card .about-project .action-row .live-link {
+  color: #e65f2b;
+}
+
+.personal-section .personal-card .about-project .action-row .live-link .arrow-icon {
+  transition: transform .3s;
+}
+
+.personal-section .personal-card .about-project .action-row .live-link:hover {
+  color: #a855f7;
+}
+
+body.light-theme .personal-section .personal-card .about-project .action-row .live-link:hover {
+  color: #ff9a00;
+}
+
+.personal-section .personal-card .about-project .action-row .live-link:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+.personal-section .personal-card:hover {
+  border-color: #a855f759;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px #0006, 0 0 25px #10b98114;
+}
+
+@media (max-width: 575px) {
+  .personal-section .personal-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.personal-section .personal-card:hover .image-wrapper .project-image {
+  transform: scale(1.06);
+}
+
+.personal-section .personal-card:hover .image-wrapper .hover-action {
+  opacity: 1;
+}
+
+.personal-section .personal-card:hover .image-wrapper .hover-action .btn-visit {
+  transform: translateY(0);
+}
+
+/*# sourceMappingURL=app_components_pages_personal-project_personal-project_scss_css_bad6b30c._.single.css.map*/
