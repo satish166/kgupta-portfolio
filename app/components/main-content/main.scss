@@ -1,0 +1,28 @@
+@use '../../styles/components/mixin' as *;
+@use '../../styles/components/variables' as *;
+
+.page-layout {
+
+    .main-content {
+        @include media-breakpoint-down-xxl {
+            flex: none;
+            width: 100%;
+        }
+
+        .toggle-button {
+            position: fixed;
+            right: 20px;
+            z-index: 99999;
+            top: 20px;
+            background: $black;
+            border-color: $black;
+            border: 1px solid $black;
+
+            svg {
+                color: $white;
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+}

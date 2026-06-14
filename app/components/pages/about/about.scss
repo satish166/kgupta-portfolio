@@ -1,0 +1,301 @@
+@use '../../../styles/components/variables' as *;
+@use '../../../styles/components/mixin' as *;
+
+.about-section {
+  padding-block: 85px;
+  background-color: transparent;
+
+  @media (max-width: 768px) {
+    padding-block: 55px;
+  }
+
+  @media (max-width: 480px) {
+    padding-block: 45px;
+  }
+
+  @media (max-width: 375px) {
+    padding-block: 36px;
+  }
+
+  .about-section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+
+    .cyber-sec-num {
+      font-size: 24px;
+      font-weight: 800;
+      color: $violet-accent;
+      font-family: 'Courier New', Courier, monospace;
+      text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+
+      @media (max-width: 768px) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .about-profile-brief {
+    border-left: 2px solid $cyan-accent;
+    padding-left: 24px;
+    margin-bottom: 40px;
+    
+    @media (max-width: 768px) {
+      padding-left: 16px;
+      margin-bottom: 28px;
+    }
+
+    .file-header {
+      display: block;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: $cyan-accent;
+      margin-bottom: 12px;
+      letter-spacing: 0.1em;
+    }
+
+    .about-bio {
+      font-size: 16px;
+      line-height: 1.8;
+      color: $text-muted;
+      margin: 0;
+      font-weight: 400;
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .personal-info {
+    // Profile Image wrapper
+    .about-image-wrapper {
+      position: relative;
+      max-width: 320px;
+      aspect-ratio: 1;
+      margin: 0 auto 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: 991px) {
+        max-width: 260px;
+      }
+      @media (max-width: 575px) {
+        max-width: 200px;
+      }
+
+      .image-border-glow {
+        position: absolute;
+        inset: -6px;
+        background: linear-gradient(135deg, $cyan-accent, $violet-accent);
+        border-radius: 24px;
+        filter: blur(15px);
+        opacity: 0.35;
+        z-index: 1;
+        transition: all 0.4s ease;
+      }
+
+      .about-image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 2px solid rgba(255, 255, 255, 0.08);
+        background: #141418;
+        z-index: 3;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        @media (max-width: 575px) {
+          border-radius: 18px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.6s ease;
+        }
+      }
+
+      &:hover {
+        .about-image {
+          transform: scale(1.02);
+          border-color: rgba(168, 85, 247, 0.35);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 
+                      0 0 20px rgba(168, 85, 247, 0.15);
+          img {
+            transform: scale(1.05);
+          }
+        }
+        
+        .image-border-glow {
+          opacity: 0.6;
+          filter: blur(20px);
+        }
+      }
+    }
+
+    .about-subtitle {
+      font-size: 24px;
+      font-weight: 700;
+      color: $white;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+
+      @media (max-width: 991px) {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 16px;
+      }
+    }
+
+    // Details grid
+    .personal-details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .detail-card {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 16px 20px;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        @media (max-width: 575px) {
+          gap: 14px;
+          padding: 14px 16px;
+        }
+
+        .detail-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 42px;
+          height: 42px;
+          border-radius: 12px;
+          background: rgba(168, 85, 247, 0.08);
+          border: 1px solid rgba(168, 85, 247, 0.15);
+          color: $cyan-accent;
+          font-size: 18px;
+          flex-shrink: 0;
+
+          @media (max-width: 575px) {
+            width: 38px;
+            height: 38px;
+            font-size: 16px;
+            border-radius: 10px;
+          }
+
+          svg {
+            width: 18px !important;
+            height: 18px !important;
+            display: block;
+          }
+        }
+
+        .detail-info {
+          display: flex;
+          flex-direction: column;
+          min-width: 0;
+
+          .detail-title {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: $text-muted;
+            margin-bottom: 2px;
+          }
+
+          .detail-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: $text-light;
+            word-break: normal;
+            overflow-wrap: break-word;
+
+            @media (max-width: 575px) {
+              font-size: 13px;
+            }
+
+            a {
+              color: $text-light;
+              text-decoration: none;
+              transition: color 0.2s ease;
+
+              &:hover {
+                color: $cyan-accent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.light-theme {
+  .about-section {
+    .about-section-header .cyber-sec-num {
+      color: #7e22ce;
+    }
+    
+    .about-profile-brief {
+      border-left-color: #059669;
+
+      .file-header {
+        color: #059669;
+      }
+      .about-bio {
+        color: #5b534e;
+      }
+    }
+
+    .personal-info {
+      .about-subtitle {
+        color: #2c2623;
+      }
+
+      .personal-details-grid {
+        .detail-card {
+          .detail-icon {
+            background: rgba(168, 85, 247, 0.06);
+            border-color: rgba(168, 85, 247, 0.15);
+            color: #059669;
+          }
+          .detail-info {
+            .detail-title {
+              color: #7d726b;
+            }
+            .detail-text {
+              color: #2c2623;
+              a {
+                color: #2c2623;
+                &:hover {
+                  color: #059669;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

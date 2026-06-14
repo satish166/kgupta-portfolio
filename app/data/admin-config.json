@@ -1,0 +1,20 @@
+{
+  "password": "admin123",
+  "smtp": {
+    "host": "smtp.gmail.com",
+    "port": 587,
+    "user": "kg611409@gmail.com",
+    "pass": ""
+  },
+  "users": [
+    {
+      "username": "satish123@gmail.com",
+      "password": "Sandhu@123",
+      "permission": "Full Access"
+    }
+  ],
+  "resetCode": {
+    "code": "353371",
+    "expiresAt": 1781425134186
+  }
+}

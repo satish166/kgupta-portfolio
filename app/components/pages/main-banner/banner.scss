@@ -1,0 +1,890 @@
+@use '../../../styles/components/variables' as *;
+@use '../../../styles/components/mixin' as *;
+
+.main-banner {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 70% 30%, rgba(26, 15, 46, 0.45) 0%, $bg-dark 100%);
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @media (max-width: 991px) {
+    min-height: auto;
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  @media (max-width: 575px) {
+    padding-top: 85px;
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: 375px) {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  .banner-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(to right, rgba(168, 85, 247, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(168, 85, 247, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 1;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
+  }
+
+  .banner-glow-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(160px);
+    z-index: 2;
+    opacity: 0.15;
+    pointer-events: none;
+    animation: float-glow 20s infinite alternate ease-in-out;
+
+    &.primary-glow {
+      width: 500px;
+      height: 500px;
+      background: $cyan-accent;
+      top: 15%;
+      left: 10%;
+
+      @media (max-width: 575px) {
+        width: 280px;
+        height: 280px;
+      }
+    }
+
+    &.secondary-glow {
+      width: 600px;
+      height: 600px;
+      background: $violet-accent;
+      bottom: 10%;
+      right: 15%;
+      animation-delay: -7s;
+
+      @media (max-width: 575px) {
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+
+  .matrix-sparkle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: $white;
+    box-shadow: 0 0 8px $white;
+    border-radius: 50%;
+    z-index: 2;
+    opacity: 0.3;
+    pointer-events: none;
+    
+    &.sparkle-1 { top: 20%; left: 45%; animation: flicker 4s infinite alternate; }
+    &.sparkle-2 { top: 75%; left: 15%; animation: flicker 6s infinite alternate-reverse; }
+    &.sparkle-3 { top: 40%; right: 20%; animation: flicker 5s infinite alternate; }
+  }
+
+  .banner-content {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+  }
+
+  // Info console layout
+  .banner-console-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .system-status-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(16, 185, 129, 0.05);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.04);
+    max-width: 100%;
+    overflow: hidden;
+
+    @media (max-width: 375px) {
+      padding: 5px 10px;
+      margin-bottom: 14px;
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background-color: $cyan-accent;
+      border-radius: 50%;
+      box-shadow: 0 0 8px $cyan-accent;
+      animation: pulse-green 1.8s infinite;
+      flex-shrink: 0;
+    }
+
+    .status-label {
+      font-size: 10px;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: 800;
+      color: $cyan-accent;
+      letter-spacing: 0.1em;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @media (max-width: 375px) {
+        font-size: 9px;
+        letter-spacing: 0.06em;
+      }
+    }
+
+    .status-ico-spin {
+      animation: fa-spin 4s linear infinite;
+    }
+  }
+
+  // Elegant Hero Name Typography
+  .hero-name-main {
+    font-size: 76px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    @media (max-width: 1200px) { font-size: 60px; }
+    @media (max-width: 768px)  { font-size: 52px; }
+    @media (max-width: 575px)  { font-size: 42px; }
+    @media (max-width: 480px)  { font-size: 36px; letter-spacing: -0.02em; }
+    @media (max-width: 375px)  { font-size: 30px; margin-bottom: 14px; }
+    @media (max-width: 320px)  { font-size: 26px; }
+
+    .first-name {
+      color: $white;
+    }
+
+    .last-name {
+      background: linear-gradient(135deg, $violet-accent, $cyan-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+    }
+    
+    body.light-theme & {
+      .first-name {
+        color: #2c2623;
+      }
+      .last-name {
+        background: linear-gradient(135deg, #7e22ce, #059669);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  // Typewriter console style
+  .terminal-typewriter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(13, 13, 22, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: $white;
+    width: max-content;
+    max-width: 100%;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+
+    @media (max-width: 575px) {
+      font-size: 14px;
+      padding: 8px 12px;
+      gap: 6px;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 12px;
+      padding: 7px 10px;
+      margin-bottom: 14px;
+    }
+
+    .term-prompt-icon {
+      color: $violet-accent;
+      font-size: 13px;
+      flex-shrink: 0;
+
+      @media (max-width: 375px) { font-size: 11px; }
+    }
+
+    .term-cursor-symbol {
+      color: $cyan-accent;
+      flex-shrink: 0;
+    }
+
+    .typed-role-text {
+      color: $white;
+      letter-spacing: 0.02em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .blinking-cursor {
+      color: $cyan-accent;
+      font-weight: 900;
+      animation: blink 1s step-end infinite;
+      flex-shrink: 0;
+    }
+  }
+
+  .hero-tagline {
+    font-size: 15px;
+    line-height: 1.7;
+    color: $text-muted;
+    max-width: 100%;
+    margin-bottom: 28px;
+    font-weight: 400;
+
+    @media (max-width: 991px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+  }
+
+  // Telemetry style stat panel
+  .telemetry-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    @media (max-width: 375px) {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .telemetry-stat-card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      background: rgba(13, 13, 22, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      overflow: hidden;
+
+      @media (max-width: 575px) {
+        padding: 12px 14px;
+        gap: 10px;
+      }
+
+      @media (max-width: 375px) {
+        padding: 10px 12px;
+        gap: 10px;
+      }
+
+      &:hover {
+        transform: translateY(-4px);
+        border-color: rgba(168, 85, 247, 0.25);
+        background: rgba(13, 13, 22, 0.8);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .telemetry-bar-acc {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 3px;
+
+        &.purple { background: $violet-accent; }
+        &.mint { background: $cyan-accent; }
+        &.blue { background: #3b82f6; }
+      }
+
+      .telemetry-icon {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.4);
+        transition: color 0.3s;
+        flex-shrink: 0;
+
+        @media (max-width: 375px) { font-size: 14px; }
+      }
+
+      &:hover .telemetry-icon {
+        color: $white;
+      }
+
+      .telemetry-info {
+        display: flex;
+        flex-direction: column;
+
+        .telemetry-val {
+          font-size: 15px;
+          font-weight: 800;
+          color: $white;
+
+          @media (max-width: 375px) { font-size: 13px; }
+        }
+
+        .telemetry-lbl {
+          font-size: 9px;
+          font-weight: 700;
+          color: $text-muted;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+      }
+    }
+  }
+
+  .cta-actions-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+
+    @media (max-width: 480px) {
+      gap: 10px;
+    }
+
+    @media (max-width: 375px) {
+      gap: 8px;
+    }
+
+    .hero-socials-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+
+      @media (max-width: 375px) {
+        gap: 8px;
+      }
+
+      .social-pill-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 18px;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        color: $text-muted;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        @media (max-width: 480px) {
+          padding: 8px 14px;
+          font-size: 12px;
+          gap: 6px;
+        }
+
+        @media (max-width: 375px) {
+          padding: 7px 12px;
+          font-size: 11px;
+        }
+
+        &:hover {
+          color: $white;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+          &.linkedin {
+            background: rgba(10, 102, 194, 0.12);
+            border-color: rgba(10, 102, 194, 0.3);
+            color: #3b82f6;
+          }
+
+          &.whatsapp {
+            background: rgba(37, 211, 102, 0.12);
+            border-color: rgba(37, 211, 102, 0.3);
+            color: #22c55e;
+          }
+        }
+      }
+    }
+  }
+
+  // ASYMMETRICAL CYBERNETIC IMAGE PORT
+  .banner-avatar-col {
+    display: flex;
+    justify-content: center;
+  }
+
+  .cyber-avatar-port {
+    position: relative;
+    width: 360px;
+    height: 360px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 1200px) {
+      width: 300px;
+      height: 300px;
+    }
+
+    @media (max-width: 991px) {
+      width: 280px;
+      height: 280px;
+      margin: 20px auto;
+    }
+
+    @media (max-width: 575px) {
+      width: 220px;
+      height: 220px;
+      margin: 16px auto;
+    }
+
+    @media (max-width: 375px) {
+      width: 190px;
+      height: 190px;
+      margin: 12px auto;
+    }
+
+    @media (max-width: 320px) {
+      width: 165px;
+      height: 165px;
+    }
+
+    // Biometric Scanner Line
+    .scanner-line-sweep {
+      position: absolute;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, $cyan-accent, transparent);
+      box-shadow: 0 0 12px $cyan-accent, 0 0 6px rgba(16, 185, 129, 0.6);
+      z-index: 6;
+      pointer-events: none;
+      animation: sweep 4.5s ease-in-out infinite;
+    }
+
+    // Concentric Cyber Rings
+    .rotating-outer-ring {
+      position: absolute;
+      inset: -15px;
+      border: 1px dashed rgba(168, 85, 247, 0.2);
+      border-radius: 50%;
+      z-index: 2;
+      animation: rotate-clockwise 30s linear infinite;
+    }
+
+    .rotating-inner-ring {
+      position: absolute;
+      inset: -5px;
+      border: 1.5px double rgba(16, 185, 129, 0.25);
+      border-radius: 50%;
+      z-index: 2;
+      animation: rotate-counter-clockwise 20s linear infinite;
+    }
+
+    // Avatar Glass Frame
+    .avatar-glass-frame {
+      width: 80%;
+      height: 80%;
+      border-radius: 36px;
+      background: rgba(13, 13, 22, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      overflow: hidden;
+      z-index: 3;
+      padding: 6px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+      transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+
+      @media (max-width: 375px) {
+        border-radius: 24px;
+        padding: 4px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(16, 185, 129, 0.08), transparent 40%);
+        pointer-events: none;
+        z-index: 4;
+      }
+
+      .avatar-portrait-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+        transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        @media (max-width: 375px) {
+          border-radius: 20px;
+        }
+      }
+    }
+
+    &:hover .avatar-glass-frame {
+      border-color: rgba(168, 85, 247, 0.35);
+      box-shadow: 0 25px 60px rgba(168, 85, 247, 0.12), 0 0 30px rgba(16, 185, 129, 0.05);
+      transform: translateY(-4px) scale(1.02);
+
+      .avatar-portrait-image {
+        transform: scale(1.04);
+      }
+    }
+
+    // Floating Cyber Tech Chips
+    .tech-tag-chip {
+      position: absolute;
+      z-index: 10;
+      background: rgba(18, 18, 24, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 700;
+      color: $white;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+      pointer-events: none;
+      animation: float-drift-node 4s ease-in-out infinite alternate;
+
+      @media (max-width: 375px) {
+        padding: 4px 8px;
+        font-size: 9px;
+        gap: 4px;
+      }
+
+      .chip-glow-dot {
+        width: 4px;
+        height: 4px;
+        background: $cyan-accent;
+        border-radius: 50%;
+        box-shadow: 0 0 6px $cyan-accent;
+        flex-shrink: 0;
+      }
+
+      // Connector wires
+      .chip-connect-line {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        z-index: -1;
+        pointer-events: none;
+        
+        &::after {
+          content: "";
+          position: absolute;
+          width: 3px;
+          height: 3px;
+          background: rgba(255, 255, 255, 0.3);
+          border-radius: 50%;
+        }
+      }
+
+      &.chip-top-left {
+        top: -15px;
+        left: -15px;
+        animation-delay: 0s;
+
+        @media (max-width: 375px) {
+          top: -10px;
+          left: -8px;
+        }
+        
+        .chip-connect-line.line-tl {
+          height: 1px;
+          width: 35px;
+          top: 100%;
+          left: 50%;
+          transform: rotate(45deg);
+          transform-origin: top left;
+          
+          &::after { right: 0; top: -1px; }
+        }
+      }
+
+      &.chip-top-right {
+        top: 20px;
+        right: -30px;
+        animation-delay: -1s;
+
+        @media (max-width: 375px) {
+          right: -20px;
+          top: 10px;
+        }
+        
+        .chip-connect-line.line-tr {
+          height: 1px;
+          width: 30px;
+          top: 50%;
+          right: 100%;
+          transform: rotate(-15deg);
+          transform-origin: top right;
+
+          &::after { left: 0; top: -1px; }
+        }
+      }
+
+      &.chip-bottom-left {
+        bottom: 30px;
+        left: -35px;
+        animation-delay: -2s;
+
+        @media (max-width: 375px) {
+          left: -20px;
+          bottom: 20px;
+        }
+        
+        .chip-connect-line.line-bl {
+          height: 1px;
+          width: 30px;
+          top: 50%;
+          left: 100%;
+          transform: rotate(15deg);
+          transform-origin: top left;
+
+          &::after { right: 0; top: -1px; }
+        }
+      }
+
+      &.chip-bottom-right {
+        bottom: -15px;
+        right: -10px;
+        animation-delay: -3s;
+
+        @media (max-width: 375px) {
+          bottom: -10px;
+          right: -5px;
+        }
+        
+        .chip-connect-line.line-br {
+          height: 1px;
+          width: 35px;
+          bottom: 100%;
+          right: 50%;
+          transform: rotate(-45deg);
+          transform-origin: bottom right;
+
+          &::after { left: 0; bottom: -1px; }
+        }
+      }
+    }
+
+    // Telemetry identification label
+    .port-telemetry-badge {
+      position: absolute;
+      bottom: 15px;
+      z-index: 5;
+      background: rgba(7, 7, 12, 0.9);
+      border: 1px solid rgba(168, 85, 247, 0.25);
+      border-radius: 4px;
+      padding: 3px 8px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+
+      @media (max-width: 375px) {
+        bottom: 8px;
+        padding: 2px 6px;
+      }
+
+      .telemetry-pulse {
+        width: 4px;
+        height: 4px;
+        background: $violet-accent;
+        border-radius: 50%;
+        box-shadow: 0 0 6px $violet-accent;
+        animation: pulse-violet 1.5s infinite;
+      }
+
+      .telemetry-text {
+        font-size: 8px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.6);
+        letter-spacing: 0.05em;
+
+        @media (max-width: 375px) {
+          font-size: 7px;
+        }
+      }
+    }
+  }
+}
+
+// Light theme modifications for hero banner
+body.light-theme {
+  .main-banner {
+    background: radial-gradient(circle at 70% 30%, rgba(243, 238, 224, 0.6) 0%, #fdfbf7 100%);
+    
+    .banner-bg-grid {
+      background-image: 
+        linear-gradient(to right, rgba(168, 85, 247, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(168, 85, 247, 0.04) 1px, transparent 1px);
+    }
+
+    .matrix-sparkle {
+      background: $violet-accent;
+      box-shadow: 0 0 8px $violet-accent;
+    }
+
+    .terminal-typewriter {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(168, 85, 247, 0.1);
+      box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+      color: #2c2623;
+
+      .typed-role-text {
+        color: #2c2623;
+      }
+    }
+
+    .telemetry-stats-grid .telemetry-stat-card {
+      background: rgba(255, 255, 255, 0.85);
+      border-color: rgba(168, 85, 247, 0.1);
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.95);
+        border-color: rgba(168, 85, 247, 0.3);
+        box-shadow: 0 10px 25px rgba(45, 30, 20, 0.04);
+      }
+
+      .telemetry-info .telemetry-val {
+        color: #2c2623;
+      }
+    }
+
+    .cta-actions-row .hero-socials-group .social-pill-btn {
+      background: rgba(255, 255, 255, 0.85);
+      border-color: rgba(168, 85, 247, 0.1);
+    }
+
+    .cyber-avatar-port {
+      .rotating-outer-ring {
+        border-color: rgba(168, 85, 247, 0.12);
+      }
+      .rotating-inner-ring {
+        border-color: rgba(16, 185, 129, 0.15);
+      }
+
+      .avatar-glass-frame {
+        background: rgba(255, 255, 255, 0.85);
+        border-color: rgba(168, 85, 247, 0.12);
+        box-shadow: 0 20px 45px rgba(45, 30, 20, 0.08);
+
+        &::before {
+          background: linear-gradient(to bottom, rgba(16, 185, 129, 0.05), transparent 40%);
+        }
+      }
+
+      .tech-tag-chip {
+        background: rgba(255, 255, 255, 0.95);
+        border-color: rgba(168, 85, 247, 0.12);
+        color: #2c2623;
+        box-shadow: 0 4px 15px rgba(45, 30, 20, 0.06);
+
+        .chip-connect-line {
+          background: rgba(0, 0, 0, 0.06);
+          &::after { background: rgba(0, 0, 0, 0.15); }
+        }
+      }
+
+      .port-telemetry-badge {
+        background: #fdfbf7;
+        border-color: rgba(168, 85, 247, 0.15);
+        
+        .telemetry-text {
+          color: #5b534e;
+        }
+      }
+    }
+  }
+}
+
+// ANIMATIONS KEYFRAMES
+@keyframes sweep {
+  0%, 100% { top: 10%; opacity: 0.3; }
+  50% { top: 90%; opacity: 0.9; }
+}
+
+@keyframes rotate-clockwise {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rotate-counter-clockwise {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+@keyframes float-drift-node {
+  0% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-4px) translateX(2px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes pulse-violet {
+  0%, 100% { box-shadow: 0 0 6px rgba(168, 85, 247, 0.5); }
+  50% { box-shadow: 0 0 12px rgba(168, 85, 247, 0.9); }
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 6px rgba(16, 185, 129, 0.5); }
+  50% { box-shadow: 0 0 12px rgba(16, 185, 129, 0.9); }
+}
+
+@keyframes float-glow {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(20px, 20px); }
+}
