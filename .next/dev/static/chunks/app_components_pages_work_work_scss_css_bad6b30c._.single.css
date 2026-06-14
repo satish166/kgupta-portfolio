@@ -1,0 +1,437 @@
+/* [project]/app/components/pages/work/work.scss.css [app-client] (css) */
+.work-section {
+  background-color: #0000;
+  padding-block: 85px;
+}
+
+@media (max-width: 768px) {
+  .work-section {
+    padding-block: 55px;
+  }
+}
+
+.work-section .work-section-header {
+  flex-direction: column;
+  gap: 8px;
+  display: flex;
+}
+
+.work-section .work-section-header .cyber-sec-num {
+  color: #a855f7;
+  text-shadow: 0 0 10px #a855f74d;
+  font-family: Courier New, Courier, monospace;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .work-section .work-section-header .cyber-sec-num {
+    font-size: 18px;
+  }
+}
+
+.work-section .section-subheading {
+  color: #9ca3af;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .work-section .section-subheading {
+    font-size: 14px;
+  }
+}
+
+.work-section .carousel-controls-wrapper .ctrl-btn {
+  color: #9ca3af;
+  cursor: pointer;
+  background: #ffffff08;
+  border: 1px solid #ffffff0f;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  transition: all .3s;
+  display: flex;
+}
+
+.work-section .carousel-controls-wrapper .ctrl-btn:hover {
+  color: #fff;
+  background: #a855f714;
+  border-color: #a855f74d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px #a855f726;
+}
+
+.work-section .carousel-controls-wrapper .ctrl-btn:focus {
+  outline: none;
+}
+
+.work-section .project-card-wrapper {
+  flex-direction: column;
+  height: 100%;
+  transition: transform .4s cubic-bezier(.165, .84, .44, 1);
+  display: flex;
+}
+
+.work-section .project-card-wrapper:hover {
+  transform: translateY(-6px);
+}
+
+.work-section .browser-mockup {
+  background: #0d0d1680;
+  border: 1px solid #ffffff0f;
+  border-radius: 16px;
+  flex-direction: column;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 20px 40px #00000059;
+}
+
+@media (max-width: 575px) {
+  .work-section .browser-mockup {
+    border-radius: 12px;
+  }
+}
+
+.work-section .browser-mockup .browser-header {
+  background: #ffffff05;
+  border-bottom: 1px solid #ffffff0a;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 18px;
+  display: flex;
+}
+
+@media (max-width: 575px) {
+  .work-section .browser-mockup .browser-header {
+    gap: 10px;
+    padding: 10px 14px;
+  }
+}
+
+.work-section .browser-mockup .browser-header .browser-dots {
+  gap: 6px;
+  display: flex;
+}
+
+.work-section .browser-mockup .browser-header .browser-dots .dot {
+  border-radius: 50%;
+  width: 9px;
+  height: 9px;
+  display: inline-block;
+}
+
+.work-section .browser-mockup .browser-header .browser-dots .dot.red {
+  background-color: #ef4444;
+}
+
+.work-section .browser-mockup .browser-header .browser-dots .dot.yellow {
+  background-color: #f59e0b;
+}
+
+.work-section .browser-mockup .browser-header .browser-dots .dot.green {
+  background-color: #10b981;
+}
+
+.work-section .browser-mockup .browser-header .browser-address-bar {
+  color: #10b981;
+  letter-spacing: .05em;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: #0000004d;
+  border: 1px solid #a855f71f;
+  border-radius: 6px;
+  flex-grow: 1;
+  padding: 4px 14px;
+  font-family: Courier New, Courier, monospace;
+  font-size: 11px;
+  overflow: hidden;
+}
+
+@media (max-width: 575px) {
+  .work-section .browser-mockup .browser-header .browser-address-bar {
+    padding: 3px 10px;
+    font-size: 10px;
+  }
+}
+
+.work-section .browser-mockup .browser-body {
+  background: #0000001a;
+  position: relative;
+}
+
+.work-section .browser-mockup .browser-body .image-overlay-container {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-section .browser-mockup .browser-body .image-overlay-container .browser-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform .6s cubic-bezier(.165, .84, .44, 1);
+}
+
+.work-section .browser-mockup .browser-body .image-overlay-container .browser-hover-overlay {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  z-index: 3;
+  background: #070a13cc;
+  justify-content: center;
+  align-items: center;
+  transition: opacity .3s;
+  display: flex;
+  position: absolute;
+  inset: 0;
+}
+
+.work-section .browser-mockup .browser-body .image-overlay-container .browser-hover-overlay .explore-btn {
+  color: #fff;
+  background: linear-gradient(135deg, #10b981, #a855f7);
+  border: none;
+  border-radius: 24px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .3s;
+  transform: translateY(12px);
+  box-shadow: 0 4px 15px #06b6d44d;
+}
+
+@media (max-width: 575px) {
+  .work-section .browser-mockup .browser-body .image-overlay-container .browser-hover-overlay .explore-btn {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+}
+
+.work-section .browser-mockup .browser-body .image-overlay-container .browser-hover-overlay .explore-btn:hover {
+  transform: translateY(12px)scale(1.05);
+  box-shadow: 0 6px 20px #06b6d480;
+}
+
+.work-section .browser-mockup .project-details {
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 24px;
+  display: flex;
+}
+
+@media (max-width: 575px) {
+  .work-section .browser-mockup .project-details {
+    padding: 16px;
+  }
+}
+
+.work-section .browser-mockup .project-details .tags-container {
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  display: flex;
+}
+
+.work-section .browser-mockup .project-details .tags-container .tech-badge {
+  color: #a855f7;
+  letter-spacing: .02em;
+  background: #a855f70f;
+  border: 1px solid #a855f726;
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+@media (max-width: 575px) {
+  .work-section .browser-mockup .project-details .tags-container .tech-badge {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+}
+
+.work-section .browser-mockup .project-details .project-title {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+@media (max-width: 575px) {
+  .work-section .browser-mockup .project-details .project-title {
+    font-size: 17px;
+  }
+}
+
+.work-section .browser-mockup .project-details .project-description {
+  color: #9ca3af;
+  flex-grow: 1;
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+@media (max-width: 575px) {
+  .work-section .browser-mockup .project-details .project-description {
+    margin-bottom: 16px;
+    font-size: 13px;
+  }
+}
+
+.work-section .browser-mockup .project-details .action-row {
+  margin-top: auto;
+}
+
+.work-section .browser-mockup .project-details .action-row .live-link {
+  color: #10b981;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color .3s;
+  display: inline-flex;
+}
+
+@media (max-width: 575px) {
+  .work-section .browser-mockup .project-details .action-row .live-link {
+    font-size: 13px;
+  }
+}
+
+.work-section .browser-mockup .project-details .action-row .live-link .arrow-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform .3s;
+}
+
+.work-section .browser-mockup .project-details .action-row .live-link:hover {
+  color: #a855f7;
+}
+
+.work-section .browser-mockup .project-details .action-row .live-link:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+.work-section .browser-mockup:hover {
+  border-color: #a855f740;
+  box-shadow: 0 25px 50px #0006, 0 0 20px #a855f70d;
+}
+
+.work-section .browser-mockup:hover .browser-body .image-overlay-container .browser-image {
+  transform: scale(1.04);
+}
+
+.work-section .browser-mockup:hover .browser-body .image-overlay-container .browser-hover-overlay {
+  opacity: 1;
+}
+
+.work-section .browser-mockup:hover .browser-body .image-overlay-container .browser-hover-overlay .explore-btn {
+  transform: translateY(0);
+}
+
+.work-section .live-slider-container {
+  margin-inline: -8px;
+}
+
+.work-section .live-slider-container .slick-track {
+  display: flex !important;
+}
+
+.work-section .live-slider-container .slick-slide {
+  justify-content: center;
+  height: inherit !important;
+  display: flex !important;
+}
+
+.work-section .live-slider-container .slick-slide > div {
+  width: 100%;
+  display: flex;
+}
+
+.work-section .slick-dots {
+  bottom: -35px;
+}
+
+.work-section .slick-dots li {
+  margin: 0 4px;
+}
+
+.work-section .slick-dots li button:before {
+  color: #fff3;
+  opacity: 1;
+  font-size: 8px;
+  transition: color .3s;
+}
+
+.work-section .slick-dots li.slick-active button:before {
+  color: #a855f7;
+}
+
+body.light-theme .work-section .work-section-header .cyber-sec-num {
+  color: #7e22ce;
+}
+
+body.light-theme .work-section .section-subheading {
+  color: #7d726b;
+}
+
+body.light-theme .work-section .browser-mockup {
+  background: #ffffffd9;
+  border-color: #a855f714;
+}
+
+body.light-theme .work-section .browser-mockup .browser-header {
+  background: #00000005;
+}
+
+body.light-theme .work-section .browser-mockup .browser-header .browser-address-bar {
+  color: #059669;
+  background: #ffffffe6;
+  border-color: #a855f71f;
+}
+
+body.light-theme .work-section .browser-mockup .project-details .tech-badge {
+  color: #7e22ce;
+  background: #a855f70a;
+  border-color: #a855f726;
+}
+
+body.light-theme .work-section .browser-mockup .project-details .project-title {
+  color: #2c2623;
+}
+
+body.light-theme .work-section .browser-mockup .project-details .project-description {
+  color: #5b534e;
+}
+
+body.light-theme .work-section .browser-mockup .project-details .action-row .live-link {
+  color: #059669;
+}
+
+body.light-theme .work-section .browser-mockup .project-details .action-row .live-link:hover {
+  color: #7e22ce;
+}
+
+body.light-theme .work-section .browser-mockup:hover {
+  border-color: #a855f740;
+}
+
+body.light-theme .work-section .slick-dots li button:before {
+  color: #00000026 !important;
+}
+
+body.light-theme .work-section .slick-dots li.slick-active button:before {
+  color: #7e22ce !important;
+}
+
+/*# sourceMappingURL=app_components_pages_work_work_scss_css_bad6b30c._.single.css.map*/
