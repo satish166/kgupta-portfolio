@@ -1,0 +1,17 @@
+
+/* 1) Sass modules FIRST */
+@use './styles/index' as styles;
+
+/* 2) Third‑party CSS imports (allowed after @use) */
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+/* 3) Tailwind layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 4) (Optional) Your global styles go here */
+// :root { ... }
+// body { ... }
+
+/* 5) Example usage of your Sass tokens/mixins from styles */

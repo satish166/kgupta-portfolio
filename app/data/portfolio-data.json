@@ -1,0 +1,193 @@
+{
+  "profile": {
+    "name": "Khushi Gupta",
+    "title": ".NET Full Stack Developer",
+    "subtitles": [
+      "I'm .NET Full Stack Developer",
+      "I'm Backend Developer",
+      "I'm Web Developer"
+    ],
+    "about": "Motivated .NET Developer with 1.4 years of experience in building full-stack web applications using .NET, Angular, and modern JavaScript. Skilled in RESTful APIs, Entity Framework, Dapper, and database-driven solutions. I focus on writing clean, maintainable code and creating seamless user experiences across devices.",
+    "subtitle": ".NET Developer & Full Stack Engineer",
+    "birthday": "03 Feb 2002",
+    "phone": "+91 8791353307",
+    "age": "24 Years",
+    "email": "kg611409@gmail.com",
+    "degree": "Master of Computer Application",
+    "address": "Mohali, India",
+    "resumeUrl": "/khushi-resume.pdf",
+    "avatar": "/uploads/k-image-1.jpg"
+  },
+  "socials": {
+    "linkedin": "https://www.linkedin.com/in/khushi-gupta-16b81528a",
+    "whatsapp": "https://wa.me/918791353307"
+  },
+  "skills": [
+    {
+      "category": "Frontend Development & Design Patterns",
+      "items": [
+        {
+          "name": "JavaScript",
+          "icon": "javascript",
+          "color": "#f7df1e"
+        },
+        {
+          "name": "JQuery",
+          "icon": "jquery",
+          "color": "#0769ad"
+        },
+        {
+          "name": "Ajax",
+          "icon": "ajax",
+          "color": "#0080c7"
+        },
+        {
+          "name": "Angular",
+          "icon": "angular",
+          "color": "#dd0031"
+        },
+        {
+          "name": "HTML",
+          "icon": "html",
+          "color": "#e34f26"
+        },
+        {
+          "name": "CQRS",
+          "icon": "cqrs",
+          "color": "#6366f1"
+        },
+        {
+          "name": "Repository Pattern",
+          "icon": "repository",
+          "color": "#8b5cf6"
+        }
+      ]
+    },
+    {
+      "category": "Backend Development",
+      "items": [
+        {
+          "name": "Asp .NET Core",
+          "icon": "dotnetcore",
+          "color": "#512bd4"
+        },
+        {
+          "name": "Asp .Net Framework (MVC)",
+          "icon": "dotnet",
+          "color": "#512bd4"
+        },
+        {
+          "name": "Web API",
+          "icon": "api",
+          "color": "#06b6d4"
+        },
+        {
+          "name": "C#",
+          "icon": "csharp",
+          "color": "#239120"
+        },
+        {
+          "name": "Yarp (Api Gateway)",
+          "icon": "yarp",
+          "color": "#f97316"
+        },
+        {
+          "name": "GraphQL",
+          "icon": "graphql",
+          "color": "#e10098"
+        },
+        {
+          "name": "Console App",
+          "icon": "consoleapp",
+          "color": "#9ca3af"
+        }
+      ]
+    },
+    {
+      "category": "ORM & Database",
+      "items": [
+        {
+          "name": "Entity Framework",
+          "icon": "entityframework",
+          "color": "#512bd4"
+        },
+        {
+          "name": "SQL Server",
+          "icon": "sqlserver",
+          "color": "#cc2927"
+        },
+        {
+          "name": "ADO.NET",
+          "icon": "adonet",
+          "color": "#512bd4"
+        },
+        {
+          "name": "LINQ",
+          "icon": "linq",
+          "color": "#f97316"
+        },
+        {
+          "name": "PostgreSQL",
+          "icon": "faPostgresql",
+          "color": "#336791"
+        }
+      ]
+    },
+    {
+      "category": "Tools & Editor",
+      "items": [
+        {
+          "name": "Visual Studio",
+          "icon": "visualstudio",
+          "color": "#5c2d91"
+        },
+        {
+          "name": "VS Code",
+          "icon": "vscode",
+          "color": "#007acc"
+        },
+        {
+          "name": "Git",
+          "icon": "faGithub",
+          "color": "#ffffff"
+        },
+        {
+          "name": "DataDog",
+          "icon": "datadog",
+          "color": "#7549be"
+        }
+      ]
+    }
+  ],
+  "liveProjects": [
+    {
+      "id": "1",
+      "name": "Bazaar Insight",
+      "description": "Bazar Insight is a product-based application designed to manage and organize products and their digital assets such as images, documents, and related data. The system works on an organization-based structure, where each organization can manage its own products, categories, and data independently. Technology: ASP.NET Core, C#, Web API, PostgreSQL, GraphQL, Angular 18. Design Pattern: CQRS, Repository Pattern.",
+      "image": "/uploads/img-4.jpg",
+      "link": "#"
+    },
+    {
+      "id": "2",
+      "name": "LJ Supply Chain Management",
+      "description": "SupplyChainManagement is a system designed to manage the flow of products from suppliers to inventory and order delivery. It helps in tracking products, managing stock levels, handling supplier details, and processing orders efficiently. Technology: ASP.NET Core, C#, Web API, MS SQL, Angular. Design Pattern: Repository Pattern.",
+      "image": "/uploads/img-2.jpg",
+      "link": "#"
+    },
+    {
+      "id": "3",
+      "name": "LJ Frame Pricing",
+      "description": "LJFramePricing is a system designed to calculate the pricing of custom frames based on size, materials, cost, profit margins, and applicable discounts. It allows users to input specific requirements and automatically generates accurate pricing. Technology: ASP.NET Core, C#, Web API, MS SQL, Angular. Design Pattern: Repository Pattern.",
+      "image": "/uploads/img-3.jpg",
+      "link": "#"
+    },
+    {
+      "id": "4",
+      "name": "Route Sync Process (Console App)",
+      "description": "RouteSync Process is a console-based application designed to synchronize route data from AS400 to CRM and Magento systems. It ensures accurate and timely data transfer between systems, helping maintain consistency and up-to-date route information across platforms. Technology: ASP.NET Framework.",
+      "image": "/uploads/img-1.jpg",
+      "link": "#"
+    }
+  ],
+  "personalProjects": []
+}

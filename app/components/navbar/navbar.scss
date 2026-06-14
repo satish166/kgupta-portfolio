@@ -1,0 +1,366 @@
+@use '../../styles/components/variables' as *;
+
+.navbar-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 1380px;
+  
+  background: rgba(13, 13, 22, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50px;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  &.scrolled {
+    top: 15px;
+    background: rgba(7, 7, 12, 0.88);
+    border-color: rgba(168, 85, 247, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .navbar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 28px;
+    height: 60px;
+    gap: 12px;
+
+    @media (max-width: 575px) {
+      padding: 10px 16px;
+      height: 52px;
+      gap: 8px;
+    }
+
+    @media (max-width: 375px) {
+      padding: 8px 12px;
+      height: 48px;
+      gap: 6px;
+    }
+  }
+
+  .nav-logo {
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    @media (max-width: 575px) {
+      font-size: 17px;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 15px;
+    }
+
+    .logo-desktop {
+      display: inline;
+      @media (max-width: 1150px) {
+        display: none;
+      }
+    }
+
+    .logo-mobile {
+      display: none;
+      @media (max-width: 1150px) {
+        display: inline;
+      }
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, $cyan-accent, $violet-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .nav-menu-desktop {
+    display: none;
+    flex: 1;
+    overflow: hidden;
+
+    @media (min-width: 1150px) {
+      display: flex;
+      justify-content: center;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 4px;
+      flex-wrap: nowrap;
+      align-items: center;
+
+      li {
+        flex-shrink: 0;
+        
+        a {
+          color: $text-muted;
+          font-size: 13px;
+          font-weight: 500;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          padding: 6px 10px;
+          border-radius: 20px;
+          transition: all 0.3s ease;
+          white-space: nowrap;
+
+          .nav-icon {
+            font-size: 12px;
+            opacity: 0.7;
+          }
+
+          &:hover {
+            color: $text-light;
+            background: rgba(255, 255, 255, 0.05);
+
+            .nav-icon {
+              color: $cyan-accent;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @media (max-width: 575px) {
+      gap: 10px;
+    }
+
+    .theme-switch-pill {
+      position: relative;
+      width: 58px;
+      height: 28px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      
+      .switch-icon {
+        font-size: 10px;
+        color: $text-muted;
+        z-index: 1;
+        transition: color 0.3s;
+        pointer-events: none;
+        
+        &.sun {
+          margin-left: 2px;
+        }
+        &.moon {
+          margin-right: 2px;
+        }
+      }
+
+      .switch-knob {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, $cyan-accent, $violet-accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        font-size: 9px;
+        z-index: 2;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      &.light {
+        background: rgba(255, 255, 255, 0.85);
+        border-color: rgba(0, 0, 0, 0.08);
+        
+        .switch-icon {
+          color: #4b5563;
+        }
+        
+        .switch-knob {
+          transform: translateX(30px);
+          color: #111827;
+          background: linear-gradient(135deg, #ff9800, #ff5722);
+        }
+      }
+
+      &:hover {
+        border-color: rgba(168, 85, 247, 0.3);
+      }
+    }
+
+    .admin-btn {
+      color: $text-muted;
+      font-size: 17px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+
+      &:hover {
+        color: $violet-accent;
+        background: rgba(16, 185, 129, 0.08);
+        border-color: rgba(16, 185, 129, 0.2);
+        transform: rotate(45deg);
+      }
+    }
+
+    .mobile-toggle-btn {
+      display: block;
+      background: transparent;
+      border: none;
+      color: $text-light;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 4px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $cyan-accent;
+      }
+
+      @media (min-width: 1150px) {
+        display: none;
+      }
+    }
+  }
+
+  // Mobile Menu Dropdown Styles
+  .nav-menu-mobile {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background: rgba(18, 18, 24, 0.95);
+    border-radius: 0 0 25px 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    
+    @media (min-width: 1150px) {
+      display: none;
+    }
+
+    &.open {
+      max-height: 380px;
+      padding-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 10px 24px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      li {
+        a {
+          color: $text-muted;
+          font-size: 15px;
+          font-weight: 500;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 10px 16px;
+          border-radius: 12px;
+          transition: all 0.3s;
+
+          .nav-icon {
+            font-size: 15px;
+          }
+
+          &:hover {
+            color: $text-light;
+            background: rgba(168, 85, 247, 0.08);
+            border-left: 3px solid $cyan-accent;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Light theme modifications
+body.light-theme {
+  .navbar-container {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(168, 85, 247, 0.08);
+    box-shadow: 0 10px 30px rgba(45, 30, 20, 0.03);
+
+    &.scrolled {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(168, 85, 247, 0.12);
+    }
+
+    .nav-menu-desktop ul li a {
+      color: #5b534e;
+
+      &:hover {
+        color: #2c2623;
+        background: rgba(168, 85, 247, 0.04);
+      }
+    }
+
+    .nav-actions {
+      .theme-switch-pill, .admin-btn {
+        color: #5b534e !important;
+        background: rgba(255, 255, 255, 0.6) !important;
+        border-color: rgba(168, 85, 247, 0.08) !important;
+
+        &:hover {
+          color: $cyan-accent !important;
+          background: rgba(168, 85, 247, 0.05) !important;
+          border-color: rgba(168, 85, 247, 0.15) !important;
+        }
+      }
+      
+      .admin-btn:hover {
+        color: $violet-accent !important;
+        background: rgba(16, 185, 129, 0.05) !important;
+        border-color: rgba(16, 185, 129, 0.15) !important;
+      }
+    }
+
+    .nav-menu-mobile {
+      background: rgba(253, 251, 247, 0.98);
+      border-top-color: rgba(168, 85, 247, 0.08);
+
+      ul li a {
+        color: #5b534e;
+
+        &:hover {
+          color: #2c2623;
+          background: rgba(168, 85, 247, 0.04);
+        }
+      }
+    }
+  }
+}
